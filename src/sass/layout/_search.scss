@@ -1,0 +1,21 @@
+.search-section {
+  max-width: 118rem;
+  margin: 2rem auto;
+
+  margin-bottom: 4rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 78em) {
+  .search-section {
+    padding: 2rem 4rem;
+  }
+}
+@media (max-width: 37.5em) {
+  .search-section {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+  }
+}

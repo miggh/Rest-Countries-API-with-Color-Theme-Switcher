@@ -1,0 +1,118 @@
+.country-detail {
+  padding: 4rem;
+  letter-spacing: 0.5px;
+  min-height: 100vh;
+  &__back-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 4rem;
+    font-family: "Nunito Sans", sans-serif;
+    background-color: $light-mode-background;
+    border-style: none;
+    box-shadow: 0 0 0.5rem 0.1rem rgba(0, 0, 0, 0.1);
+    padding: 1rem 3rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      transform: translateX(-5px);
+    }
+  }
+
+  &__back-svg {
+    width: 2rem;
+  }
+
+  &__main {
+    display: flex;
+    align-items: center;
+    gap: 8rem;
+    justify-content: flex-start;
+  }
+
+  &__flag {
+    width: 50rem;
+  }
+
+  &__data-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 4rem;
+  }
+
+  &__name {
+    font-size: 2.5rem;
+  }
+
+  &__detail-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 4rem;
+    row-gap: 1rem;
+    font-size: 1.5rem;
+    justify-items: flex-start;
+  }
+
+  &__basic {
+    font-weight: 800;
+  }
+
+  &__data {
+    font-weight: 300;
+  }
+
+  &__border-block {
+    font-size: 1.5rem;
+  }
+
+  &__border-btn {
+    font-family: "Nunito Sans", sans-serif;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    background-color: $light-mode-background;
+    border-style: none;
+    box-shadow: 0 0 0.5rem 0.1rem rgba(0, 0, 0, 0.1);
+    padding: 0.8rem 1.2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+}
+
+.dark .country-detail__back-btn {
+  color: $dark-mode-text;
+  background-color: $dark-mode-elements;
+}
+
+.dark .country-detail__back-svg path {
+  stroke: $dark-mode-text;
+}
+
+.dark .country-detail__border-btn {
+  color: $dark-mode-text;
+  background-color: $dark-mode-elements;
+}
+
+@media (max-width: 78em) {
+  .country-detail__main {
+    flex-direction: column;
+  }
+}
+@media (max-width: 37.5em) {
+  .country-detail {
+    &__flag {
+      width: 100%;
+    }
+    &__detail-block {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

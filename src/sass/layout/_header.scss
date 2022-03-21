@@ -1,0 +1,17 @@
+.header {
+  background-color: white;
+  box-shadow: 0 0.2rem 0.2rem 0.1rem rgba(0, 0, 0, 0.1);
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.dark .header {
+  background-color: $dark-mode-elements;
+}
+
+@media (max-width: 37.5em) {
+  .header {
+    padding: 2rem;
+  }
+}

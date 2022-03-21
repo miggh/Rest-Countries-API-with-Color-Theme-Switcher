@@ -1,0 +1,38 @@
+.country {
+  &__blocks {
+    max-width: 120rem;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4rem;
+    justify-items: center;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 78em) {
+  .country {
+    &__blocks {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+@media (max-width: 60em) {
+  .country {
+    &__blocks {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media (max-width: 37.5rem) {
+  .country {
+    &__blocks {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

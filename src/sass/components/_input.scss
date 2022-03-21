@@ -1,0 +1,33 @@
+.searchbar {
+  font-family: "Nunito Sans", sans-serif;
+  box-shadow: 0 0 0.5rem 0.1rem rgba(0, 0, 0, 0.1);
+  border-style: none;
+  padding: 2rem;
+  padding-left: 5rem;
+  height: 5rem;
+  font-size: 1.5rem;
+  width: 40rem;
+  &__icon {
+    width: 2.5rem;
+    position: absolute;
+    left: 1.5rem;
+    top: 50%;
+    stroke: $light-mode-input;
+    transform: translateY(-50%);
+  }
+}
+
+.searchbar-block {
+  position: relative;
+}
+
+.dark .searchbar {
+  background-color: $dark-mode-elements;
+  color: $dark-mode-text;
+}
+
+@media (max-width: 37.5em) {
+  .searchbar {
+    width: 32.5rem;
+  }
+}

@@ -1,0 +1,26 @@
+.mode-toggler {
+  font-family: "Nunito Sans", sans-serif;
+  background-color: transparent;
+  border-style: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &__icon {
+    width: 2rem;
+  }
+}
+
+.dark .mode-toggler {
+  color: $dark-mode-text;
+}
+
+@media (max-width: 37.5em) {
+  .mode-toggler {
+    gap: 0.5rem;
+  }
+}

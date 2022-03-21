@@ -1,0 +1,24 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  color: $light-mode-text;
+  background-color: $light-mode-background;
+}
+
+.dark {
+  color: $dark-mode-text;
+  background-color: $dark-mode-background;
+  min-height: 100vh;
+}
