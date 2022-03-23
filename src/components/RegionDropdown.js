@@ -12,6 +12,7 @@ const RegionDropdown = ({ fetchRegionCountries }) => {
         className="dropdown"
         onChange={handleChange}
         defaultValue="default"
+        title="region"
       >
         <option className="dropdown__option" value="default" disabled hidden>
           Filter by Region
