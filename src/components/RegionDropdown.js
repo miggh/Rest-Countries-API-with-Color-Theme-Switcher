@@ -38,7 +38,7 @@ const RegionDropdown = ({ fetchRegionCountries, fetchAllCountries }) => {
           Oceania
         </option>
         <option className="dropdown__option" value="all">
-          All
+          All Regions
         </option>
       </select>
     </React.Fragment>
