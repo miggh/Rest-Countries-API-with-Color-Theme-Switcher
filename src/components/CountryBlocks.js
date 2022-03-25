@@ -28,7 +28,7 @@ class CountryBlocks extends React.Component {
   }
 
   render() {
-    return <main className="country__blocks">{this.renderCountryBlocks()}</main>;
+    return <div className="country__blocks">{this.renderCountryBlocks()}</div>;
   }
 }
 

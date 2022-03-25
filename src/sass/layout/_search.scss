@@ -1,10 +1,14 @@
 .search-section {
-  max-width: 118rem;
   margin: 2rem auto;
 
   margin-bottom: 4rem;
   display: flex;
   justify-content: space-between;
+}
+
+.main {
+  max-width: 120rem;
+  margin: 2rem auto;
 }
 
 @media (max-width: 78em) {

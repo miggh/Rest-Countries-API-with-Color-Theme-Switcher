@@ -52,7 +52,7 @@ const Country = (props) => {
     : "None";
 
   return (
-    <main className="country-detail">
+    <div className="country-detail">
       <button
         className="country-detail__back-btn"
         onClick={props.toggleShowCountryDetail}
@@ -123,7 +123,7 @@ const Country = (props) => {
           </div>
         </div>
       </div>
-    </main>
+    </div>
   );
 };
 

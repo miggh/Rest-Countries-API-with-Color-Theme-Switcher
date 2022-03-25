@@ -1,10 +1,15 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchRegionCountries } from "../actions";
+import { fetchRegionCountries, fetchAllCountries } from "../actions";
+import "../sass/components/_dropdown.scss";
 
-const RegionDropdown = ({ fetchRegionCountries }) => {
+const RegionDropdown = ({ fetchRegionCountries, fetchAllCountries }) => {
   const handleChange = (event) => {
-    fetchRegionCountries(event.target.value);
+    if (event.target.value === "all") {
+      fetchAllCountries();
+    } else {
+      fetchRegionCountries(event.target.value);
+    }
   };
   return (
     <React.Fragment>
@@ -20,8 +25,8 @@ const RegionDropdown = ({ fetchRegionCountries }) => {
         <option className="dropdown__option" value="africa">
           Africa
         </option>
-        <option className="dropdown__option" value="america">
-          America
+        <option className="dropdown__option" value="americas">
+          Americas
         </option>
         <option className="dropdown__option" value="asia">
           Asia
@@ -32,9 +37,14 @@ const RegionDropdown = ({ fetchRegionCountries }) => {
         <option className="dropdown__option" value="oceania">
           Oceania
         </option>
+        <option className="dropdown__option" value="all">
+          All
+        </option>
       </select>
     </React.Fragment>
   );
 };
 
-export default connect(null, { fetchRegionCountries })(RegionDropdown);
+export default connect(null, { fetchRegionCountries, fetchAllCountries })(
+  RegionDropdown
+);

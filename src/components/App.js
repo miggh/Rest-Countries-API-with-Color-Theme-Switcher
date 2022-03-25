@@ -11,6 +11,7 @@ const App = (props) => {
   return (
     <div className={props.darkMode ? "dark" : ""}>
       <Header />
+      <main className="main">
       {!props.showCountryDetail && (
         <div className="search-section">
           <SearchBar />
@@ -19,6 +20,7 @@ const App = (props) => {
       )}
       {props.showCountryDetail && <Country />}
       {!props.showCountryDetail && <CountryBlocks />}
+      </main>
     </div>
   );
 };
