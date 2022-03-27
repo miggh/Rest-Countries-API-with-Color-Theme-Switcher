@@ -1,12 +1,47 @@
+@import "../abstracts/variables";
+
 .country {
   &__blocks {
-    margin: 2rem 0;
+    margin: 2rem auto;
+    max-width: 120rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 4rem;
     justify-items: center;
     justify-content: space-between;
+
+    &__back-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+      font-family: "Nunito Sans", sans-serif;
+      background-color: $light-mode-background;
+      border-style: none;
+      box-shadow: 0 0 0.5rem 0.1rem rgba(0, 0, 0, 0.1);
+      padding: 1rem 3rem;
+      font-size: 1.6rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      grid-column: 1 / -1;
+      justify-self: start;
+
+      &:hover {
+        transform: translateX(-5px);
+      }
+    }
   }
+}
+
+.error-message {
+  justify-self: start;
+  padding: 2rem;
+}
+
+.dark .country__blocks__back-btn {
+  color: $dark-mode-text;
+  background-color: $dark-mode-elements;
 }
 
 @media (max-width: 78em) {

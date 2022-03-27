@@ -1,16 +1,17 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchRegionCountries, fetchAllCountries } from "../actions";
+import {
+ 
+  regionFilter,
+} from "../actions";
 import "../sass/components/_dropdown.scss";
 
-const RegionDropdown = ({ fetchRegionCountries, fetchAllCountries }) => {
+const RegionDropdown = ({ regionFilter }) => {
   const handleChange = (event) => {
-    if (event.target.value === "all") {
-      fetchAllCountries();
-    } else {
-      fetchRegionCountries(event.target.value);
-    }
+   
+    regionFilter(event.target.value);
   };
+  
   return (
     <React.Fragment>
       <select
@@ -22,22 +23,22 @@ const RegionDropdown = ({ fetchRegionCountries, fetchAllCountries }) => {
         <option className="dropdown__option" value="default" disabled hidden>
           Filter by Region
         </option>
-        <option className="dropdown__option" value="africa">
+        <option className="dropdown__option" value="Africa">
           Africa
         </option>
-        <option className="dropdown__option" value="americas">
+        <option className="dropdown__option" value="Americas">
           Americas
         </option>
-        <option className="dropdown__option" value="asia">
+        <option className="dropdown__option" value="Asia">
           Asia
         </option>
-        <option className="dropdown__option" value="europe">
+        <option className="dropdown__option" value="Europe">
           Europe
         </option>
-        <option className="dropdown__option" value="oceania">
+        <option className="dropdown__option" value="Oceania">
           Oceania
         </option>
-        <option className="dropdown__option" value="all">
+        <option className="dropdown__option" value="All">
           All Regions
         </option>
       </select>
@@ -45,6 +46,6 @@ const RegionDropdown = ({ fetchRegionCountries, fetchAllCountries }) => {
   );
 };
 
-export default connect(null, { fetchRegionCountries, fetchAllCountries })(
-  RegionDropdown
-);
+export default connect(null, {
+  regionFilter,
+})(RegionDropdown);

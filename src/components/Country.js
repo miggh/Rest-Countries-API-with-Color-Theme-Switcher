@@ -4,6 +4,7 @@ import { toggleShowCountryDetail, fetchCountryDetail } from "../actions";
 import arrowBack from "../image/arrow-back-outline.svg";
 import arrowBackDark from "../image/arrow-back-dark.svg";
 import restCountries from "../apis/restCountries";
+import "../sass/layout/_countryDetail.scss";
 
 const Country = (props) => {
   const [borders, setBorders] = useState([]);
@@ -30,12 +31,12 @@ const Country = (props) => {
   const topLevelDomain = props.selectedCountry.topLevelDomain.join(", ");
 
   const currencies = props.selectedCountry.currencies
-    .map((cur) => cur.name)
-    .join(", ");
+    ? props.selectedCountry.currencies.map((cur) => cur.name).join(", ")
+    : "None";
 
   const languages = props.selectedCountry.languages
-    .map((lang) => lang.name)
-    .join(", ");
+    ? props.selectedCountry.languages.map((lang) => lang.name).join(", ")
+    : "None";
 
   const renderBorderCountry = props.selectedCountry.borders
     ? borders.map((border) => {
@@ -58,7 +59,7 @@ const Country = (props) => {
         onClick={props.toggleShowCountryDetail}
       >
         <img
-          src={props.darkMode ? `${arrowBack}` : `${arrowBackDark}`}
+          src={props.darkMode ? `${arrowBackDark}` : `${arrowBack}`}
           alt="back"
           className="country-detail__back-svg"
         />
@@ -100,7 +101,9 @@ const Country = (props) => {
             <p>
               <span className="country-detail__basic">Capital: </span>
               <span className="country-detail__data">
-                {props.selectedCountry.capital}
+                {props.selectedCountry.capital
+                  ? props.selectedCountry.capital
+                  : "None"}
               </span>
             </p>
             <p>

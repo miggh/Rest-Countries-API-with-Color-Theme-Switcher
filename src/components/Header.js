@@ -26,6 +26,6 @@ const Header = (props) => {
 };
 
 const mapStateToProps = (state) => {
-  return { darkMode: state.toggleDarkMode };
+  return { darkMode: state.darkMode };
 };
 export default connect(mapStateToProps, { toggleDarkMode })(Header);

@@ -7,11 +7,8 @@ export const fetchAllCountries = () => {
   };
 };
 
-export const fetchRegionCountries = (region) => {
-  return async (dispatch) => {
-    const response = await restCountries.get(`/region/${region}`);
-    dispatch({ type: "FETCH_REGION_COUNTRIES", payload: response.data });
-  };
+export const showAllCountries = () => {
+  return { type: "SHOW_ALL_COUNTRIES" };
 };
 
 export const fetchSearchCountries = (input) => {
@@ -20,9 +17,14 @@ export const fetchSearchCountries = (input) => {
       const response = await restCountries.get(`/name/${input}`);
       dispatch({ type: "FETCH_SEARCH_COUNTRIES", payload: response.data });
     } catch (err) {
-      alert(`${err.response.data.message}. Please try again!`);
+      console.error(err.response);
+      dispatch({ type: "FETCH_ERROR" });
     }
   };
+};
+
+export const regionFilter = (region) => {
+  return { type: "REGION_FILTER", payload: region };
 };
 
 export const fetchCountryDetail = (fullName) => {
@@ -45,4 +47,8 @@ export const fetchCountryName = (alpha3Code) => {
 
 export const toggleDarkMode = () => {
   return { type: "TOGGLE_DARK_MODE" };
+};
+
+export const searching = (searching) => {
+  return { type: "IS_SEARCHING", payload: searching };
 };

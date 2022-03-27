@@ -29,7 +29,9 @@ class CountryBlock extends React.Component {
           </p>
           <p>
             <span className="country__block__basic">Capital: </span>
-            <span className="country__block__data">{this.props.capital}</span>
+            <span className="country__block__data">
+              {this.props.capital ? this.props.capital : "None"}
+            </span>
           </p>
         </div>
       </div>

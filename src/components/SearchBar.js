@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { fetchSearchCountries } from "../actions";
+import { fetchSearchCountries, searching } from "../actions";
 import searchSvg from "../image/search-outline.svg";
+import "../sass/layout/_search.scss";
 
-const SearchBar = ({ fetchSearchCountries }) => {
+const SearchBar = ({ fetchSearchCountries, searching }) => {
   const [term, setTerm] = useState("");
   const submitHandler = (event) => {
     event.preventDefault();
     fetchSearchCountries(term);
+    searching(true);
   };
   return (
     <div className="searchbar-block">
@@ -25,4 +27,4 @@ const SearchBar = ({ fetchSearchCountries }) => {
   );
 };
 
-export default connect(null, { fetchSearchCountries })(SearchBar);
+export default connect(null, { fetchSearchCountries, searching })(SearchBar);
